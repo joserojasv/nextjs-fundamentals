@@ -63,9 +63,9 @@ function ImageOptimizationContent() {
       <h1>Image Optimization</h1>
       <ol>
         <li>
-          Get started by editing <code>src/app/page.tsx</code>.
+          Next.js automatically optimizes images with its built-in <code>Image</code>.
         </li>
-        <li>Save and see your changes instantly.</li>
+        <li>Load a compressed, resized, possibly reformatted version to WebP.</li>
       </ol>
 
       <div className={styles.ctas}>
