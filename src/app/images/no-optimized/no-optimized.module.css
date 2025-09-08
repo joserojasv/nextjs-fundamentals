@@ -1,0 +1,96 @@
+.page {
+  --gray-rgb: 255, 255, 255;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 20px; /* smaller horizontal padding */
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: var(--font-geist-sans, sans-serif);
+}
+@media (max-width: 600px) {
+  .page {
+    padding: 40px 10px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.ctas {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.primary {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  background: var(--foreground, #fff);
+  color: var(--background, #000);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary:hover {
+  background: var(--button-primary-hover);
+  border-color: transparent;
+}
+
+/* Content Styling */
+.centered {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* let columns grow to fill space */
+  gap: 1rem;
+  max-width: 900px; /* Optional: container max width */
+  margin: 0 auto; /* center grid */
+}
+
+
+.container {
+  max-width: 1200px; /* Big max size on desktop */
+  width: 90vw;       /* Use 90% of viewport width */
+  margin: 0 auto;    /* Center horizontally */
+  border: 2px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+}

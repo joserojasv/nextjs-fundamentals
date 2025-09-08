@@ -1,11 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
+        
+         <Image
           className={styles.logo}
           src="/next.svg"
           alt="Next.js logo"
@@ -13,83 +15,63 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        {/* Two Columns Side by Side */}
+        <div className={styles.columns}>
+          <div className={styles.column}>
+            <FetchDataContent />
+          </div>
+          <div className={styles.column}>
+            <ImageOptimizationContent />
+          </div>
         </div>
       </main>
+
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        {/* ... footer remains unchanged ... */}
       </footer>
     </div>
+  );
+}
+
+// Extracted duplicated content into a separate component
+function FetchDataContent() {
+  return (
+    <>
+     <h1>Fetch Data Strategies</h1>
+      <ol>
+        <li><strong>SSR (Server-Side Rendering)</strong> → For dynamic content, such as dashboards.</li>
+        <li><strong>SSG (Static Site Generation)</strong> → For static content, such as blogs or landing pages.</li>
+        <li><strong>ISR (Incremental Static Regeneration)</strong> → Generates static pages on-demand.</li>
+        <li><strong>CSR (Client-Side Rendering)</strong> → You can also render content on the client side, like with plain React.</li>
+      </ol>
+
+      <div className={styles.ctas}>
+         <Link href="/fetch/ssr" className={styles.primary}>SSR</Link>
+         <Link href="/fetch/ssg" className={styles.primary}>SSG</Link>
+         <Link href="/fetch/isr" className={styles.primary}>ISR</Link>
+         <Link href="/fetch/csr" className={styles.primary}>CSR</Link>
+      </div>
+    </>
+  );
+}
+
+// Extracted duplicated content into a separate component
+function ImageOptimizationContent() {
+  return (
+    <>
+      <h1>Image Optimization</h1>
+      <ol>
+        <li>
+          Get started by editing <code>src/app/page.tsx</code>.
+        </li>
+        <li>Save and see your changes instantly.</li>
+      </ol>
+
+      <div className={styles.ctas}>
+         <Link href="/images/optimized" className={styles.primary}>Optimized/image</Link>
+         <Link href="/images/no-optimized" className={styles.primary}>Regular/image</Link>
+      </div>
+    </>
   );
 }
