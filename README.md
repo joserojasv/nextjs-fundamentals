@@ -13,7 +13,15 @@ pnpm dev
 # or
 bun dev
 ```
+## Nextjs commands:
+```bash
+rm -rf .next  #It deletes the .next folder — which is Next.js’s build output directory and server cache
 
+npm run build (prod)
+npm run start (prod)
+
+npm run dev (for dev mode)
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
